@@ -26,7 +26,7 @@ const App = () => {
   // get a link_token from your API when component mounts
   React.useEffect(() => {
     const createLinkToken = async () => {
-      const response = await fetch(`http://localhost:3333/create-link-token`, {
+      const response = await fetch(`https://fingpt-plugin.vercel.app/create-link-token`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const App = () => {
     // send public_token to your server
     // https://plaid.com/docs/api/tokens/#token-exchange-flow
     console.log(publicToken, metadata);
-    const response = await fetch(`http://localhost:3333/exchange-public-token`, {
+    const response = await fetch(`https://fingpt-plugin.vercel.app/exchange-public-token`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const App = () => {
     setTransactions([]);
     setAccounts([]);
     try {
-      const response = await fetch(`http://localhost:3333/sync-item`, {
+      const response = await fetch(`https://fingpt-plugin.vercel.app/sync-item`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
